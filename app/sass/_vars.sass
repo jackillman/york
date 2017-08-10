@@ -1,0 +1,32 @@
+$default-font: "roboto-example", sans-serif
+$lato-reg: "lato-regular", sans-serif
+$lato-bold: "lato-bold", sans-serif
+$lato-black: "lato-black", sans-serif
+$lato-it: "lato-italic", sans-serif
+$lato-light: "lato-light", sans-serif
+$lato-heavy: "lato-heavy", sans-serif
+$montserrat-regular: "montserrat-regular", sans-serif
+$montserrat-bold: "montserrat-bold", sans-serif
+$chunk-five: "chunk-five"
+$accent: orange
+
+@mixin big 
+    @media (min-width: 1201px)
+        @content
+ 
+@mixin large
+    @media (min-width: 992px) and (max-width: 1200px)
+        @content
+       
+@mixin medium
+    @media (min-width: 768px) and (max-width: 991px)
+        @content
+           
+@mixin small
+    @media (min-width: 500px) and (max-width: 767px)
+        @content
+        
+@mixin micro
+    @media (min-width: 250px) and (max-width: 499px)
+        @content  
+

@@ -1,0 +1,1112 @@
+@import 'fonts'
+@import 'vars'
+@directive "String of text to output."
+@mixin big 
+    @media (min-width: 1201px)
+    	@content
+ 
+@mixin large
+    @media (min-width: 992px) and (max-width: 1200px)
+    	@content
+       
+@mixin medium
+	@media (min-width: 768px) and (max-width: 991px)
+	    @content
+           
+@mixin small
+    @media (min-width: 500px) and (max-width: 767px)
+    	@content
+
+@mixin micro
+    @media (min-width: 250px) and (max-width: 499px)
+        @content  
+
+.display-card
+	display: none
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+	
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.header-top
+
+	
+	height: 100vh
+	background: #9bddd8 url(../img/top-bg.png) top no-repeat
+	@include micro
+		height: 100vh
+	@include big
+		height: 100vh
+		background-size: cover
+	
+	
+	.top-line
+		display: flex
+		justify-content: space-between
+		width: 100%
+		align-items: center
+		position: relative
+		height: 120px
+		margin-bottom: 70px
+		@include micro
+			display: block
+		.logo
+			font-family: $montserrat-regular
+			padding: 0
+			margin: 0
+			font-size: 26px
+			color: white
+			span
+				font-family: $montserrat-bold
+			@include micro
+				display: block
+				width: 100%
+				font-size: 20px
+				margin: 0 auto
+				text-align: center
+		nav
+			display: flex
+			align-items: center
+			justify-content: space-around
+			@include micro
+				justify-content: space-between
+			.nav-mobile
+				position: relative
+				right: -15px
+				top: 0
+				bottom: 0
+				height: 70px
+				background-color: transparent
+				width: 80px
+				cursor: pointer
+				transition: all linear .5s
+				margin-right: 10px
+				
+				
+				&.active
+					
+					
+					.nav-mobile__line--top
+						top: 50%
+						transform: rotate(45deg)
+					.nav-mobile__line--middle
+						opacity: 0
+					.nav-mobile__line--bottom
+						top: 50%
+						transform: rotate(-45deg)
+				&__line
+					position: absolute
+					right: 30%
+					display: block
+					width: 30px
+					height: 5px
+					
+					background-color: white
+					
+					&--top
+						top: 25px
+						transition: all linear .5s
+					&--middle
+						top: 35px
+						opacity: 1
+						transition: all linear .5s
+					&--bottom
+						top: 45px
+						transition: all linear .5s
+			ul.menu
+				margin: 0
+				
+					
+				li
+					display: inline-block !important
+					margin: 0 5px
+					border: 3px solid transparent
+					padding: 5px 15px
+					a
+						color: white
+						&:hover
+							text-decoration: none
+
+					&:hover
+						border: 3px solid white
+						border-radius: 15px
+				&.showed
+					position: absolute
+					right: 20px
+					top: 100px
+					z-index: 10
+					display: block !important
+					transition: all linear .5s
+
+					width: 100%
+					margin: 0 auto
+					text-align: center
+					font-size: 20px
+					// @include big
+					// 	display: none
+					// @include large
+					// 	display: none
+					// @include medium
+					// 	display: none
+                
+					li
+						display: block !important
+						height: 100%
+						width: 100%
+						background: rgba(#39f, 0.5)
+						margin: 0 auto
+						border-bottom: 1px solid #bbb
+						&:hover
+							border: 3px solid white
+							border-radius: 0px
+						
+			.ava
+				@include micro
+					display: flex
+
+				img
+					border-radius: 50%
+					margin-left: 15px
+					cursor: pointer
+					@include micro
+						order: 1
+				i
+					cursor: pointer
+					@include micro
+						margin-top: 15px
+	.header-content
+		text-align: center
+		@include big
+			height: 100%
+		.container
+			@include big
+				height: 100%
+			.row
+				.header-text
+					@include big
+						height: 100%
+						
+
+		
+					h1
+						font-size: 80px
+						color: white
+						font-family: $chunk-five
+						margin: 0
+						text-transform: uppercase
+						.blue
+							color: #01a2a6
+						@include micro
+							font-size: 40px
+					p
+						color: white
+					.btn
+						background: #ffffa6
+						font-family: $lato-black
+						font-size: 16px
+						padding: 20px
+						border-radius: 30px
+						margin-top: 30px
+						transition: all .5s
+						cursor: pointer
+						border: none
+						outline: none
+						&:hover
+							background: #3FD6ED
+							color: #fff
+
+.main-content
+	text-align: center
+	height: 550px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	@include micro
+		flex-direction: column
+		margin-bottom: 50px
+
+	.container
+		height: 500px
+		@include small
+			margin-bottom: 100px
+		@include micro
+			margin-bottom: 100px
+		.row
+			margin-top: -50px
+			z-index: 2222
+			background: rgba(#fff, 0.7)
+			display: flex
+			justify-content: space-between
+			align-items: center
+			@include medium
+				justify-content: space-between
+				margin-top: 0px
+			@include small
+				flex-direction: column
+				justify-content: space-between
+				margin-top: 0px
+			@include micro
+				flex-direction: column
+				justify-content: space-between
+				margin-top: 0px
+
+			.cols
+				margin-top: 100px
+				@include small
+					margin-top: 0
+				@include micro
+					margin-top: 0
+
+					
+
+			
+				.city-img
+					background: url(../img/city.png) center no-repeat
+					height: 270px				
+					width: 460px
+					@include medium,large
+						height: 320px
+					@include micro,small
+						width: 100%
+						background-size: 100%
+				.city-info
+					@include small
+						margin-top: 40px
+					h2
+						font-family: $chunk-five
+						font-size: 60px
+						color: #29d9c2
+						@include micro
+							font-size: 40px
+						span
+							color: #01A2A6
+						p
+							font-family: $lato-reg
+							color: #777
+
+.destination
+	// margin-bottom: 100px
+	@include small
+		margin-bottom: 20px
+	@include micro
+		margin-bottom: 0
+	
+
+
+	h2
+		font-family: $chunk-five
+		font-size: 60px
+		color: #29d9c2
+		span
+			color: #01A2A6
+		@include small
+			text-align: center
+		@include micro
+			font-size: 40px
+			text-align: center
+	p
+		font-family: $lato-reg
+		font-size: 16px
+		color: #777
+		margin-bottom: 30px
+		@include micro
+			text-align: center
+	.search
+		@include micro
+			width: 100%
+			margin: 0 auto
+			display: block
+		input
+			border: none
+			border-bottom: 1px solid transparent
+			&[placeholder]:focus
+				outline: none
+				border-bottom: 1px solid #aaa
+			
+	.place
+		text-transform: uppercase
+		span:first-child
+			font-family: $lato-black
+			color: #777
+		span
+			font-family: $lato-reg
+			color: #aeaeae
+		@include micro
+			display: none
+
+
+	.batu
+		background: url(../img/batu.jpg) top center no-repeat
+		margin: 20px 0
+		background-size: 100%
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+		height: 600px
+		width: 100%
+		position: relative
+		@include medium
+			background-size: cover
+		@include small
+			background-size: cover
+			
+		@include micro
+			background-size: contain
+			height: 100%
+			
+		
+		.see-more
+			align-self: flex-end
+			cursor: pointer
+			color: white
+			@include micro
+				display: none
+				
+		&__card
+			width: 35%
+			border: 1px solid #cecece
+			background: #fff
+			padding: 40px 10px
+			@include micro
+				width: 100%
+				padding: 0
+				text-align: center
+				
+			
+			img
+				padding-bottom: 10px
+			h4
+				font-size: 30px
+				color: #01a2a6
+	.bromo
+		
+		padding: 0
+		margin: 0
+		position: relative
+		display: flex
+		height: 400px
+		max-width: 100%
+		background: url(../img/sec.jpg) center no-repeat
+		background-size: 100% 100%
+		@include large,medium,small
+			margin-bottom: 20px
+			
+		
+		@include micro
+			margin-bottom: 20px
+			height: 100%
+		&__card
+			width: 40%
+			border: 1px solid #cecece
+			padding: 20px 10px 20px
+			background: white
+			overflow: hidden
+			@include micro
+				width: 100%
+				padding: 0
+				text-align: center
+				padding: 0
+				margin: 0 auto
+				
+			img
+				position: absolute
+				bottom: 75%
+				@include micro
+					position: static
+						
+			h4
+				margin-top: 90px
+				@include micro
+					margin-top: 10px
+		.see-more
+			align-self: flex-end
+			cursor: pointer
+			color: white
+			@include micro
+				display: none
+			
+				
+	.palma
+		background: red
+		padding: 0
+		margin: 0
+		position: relative
+		display: flex
+		height: 400px
+		max-width: 100%
+		background: url(../img/three.jpg) center no-repeat
+		background-size: 100% 100%
+		@include micro
+			height: 100%
+		
+			
+		&__card
+			width: 40%
+			border: 1px solid #cecece
+			padding: 20px 10px
+			background: white
+			overflow: hidden
+			@include micro
+				width: 100%
+				padding: 0
+				text-align: center
+				padding: 0
+				margin: 0 auto
+				height: 100%
+			img
+				position: absolute
+				bottom: 75%
+				@include micro
+					position: static
+			h4
+				margin-top: 90px
+				@include micro
+					margin-top: 10px
+		.see-more
+			align-self: flex-end
+			cursor: pointer
+			color: white
+			@include micro
+				display: none
+				
+	.pagination
+		margin: 20px
+		display: flex
+		justify-content: center
+
+
+.ittinery
+	text-align: center
+	@include micro
+		text-align: center
+
+	h2
+		font-family: $chunk-five
+		font-size: 60px
+		color: #29d9c2
+		margin: 20px auto
+		span
+			color: #01A2A6
+		@include micro
+			font-size: 40px
+	p
+		font-family: $lato-reg
+		font-size: 16px
+		color: #777
+		margin: 0 auto 30px
+	.cont-cards
+		display: flex
+		flex-direction: row
+		@include medium
+				width: 100%
+				display: flex
+				flex-direction: column
+		@include small
+				width: 100%
+				display: flex
+				flex-direction: column
+		@include micro
+				width: 100%
+				display: flex
+				flex-direction: column
+				
+		.cardBox
+			perspective: 1000px
+			margin: 15px
+			display: inline-block
+			width: 30%
+			@include large
+				margin: 0 auto
+			@include medium
+			  	width: 100%
+			@include small,micro
+				width: 100%
+				margin: 15px 0
+				
+			
+			.card
+				position: relative
+				width: 100%
+				height: 450px
+				background: #fff
+				transform-style: preserve-3d
+				transition: 1s ease
+				box-shadow: 0 30px 30px rgba(0,0,0,0.5)
+				
+			
+				.card-front,
+				.card-back
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 450px
+					color: #777
+					backface-visibility: hidden
+				.card-front
+					
+					
+					
+					text-align: center
+					justify-content: center
+					display: flex
+					
+				.card-back
+					font-size: 16px
+					padding: 0 10px
+					text-align: center
+					justify-content: center
+					display: flex
+					overflow: hidden
+					align-items: center
+					transform: rotateY(180deg)
+				.one-card-f
+					background: url(../img/hawaii.jpg) center no-repeat
+					background-size: cover
+				.two-card-f
+					background: url(../img/dominicana.jpg) center no-repeat
+					background-size: cover
+				.three-card-f
+					background: url(../img/rio.jpg) center no-repeat
+					background-size: cover
+			&:hover .card
+				transform: rotateY(180deg)
+
+.formMain
+	margin-top: 120px
+	margin-bottom: 100px
+	
+	&__card-form
+		
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-bottom: 20px
+		&_top-card
+			background: url(../img/top-form.png) bottom no-repeat
+			background-size: 100% 140%
+			width: 100%
+			height: 75px
+			color: white
+			font-size: 16px
+			text-transform: capitalize
+			
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 0
+			overflow: hidden
+		&_body-card
+			width: 100%
+			background-color: #ffffa6
+			.dates-first
+				display: flex
+				justify-content: space-between
+				margin: 10px 55px 5px
+				color: #29d9c2
+				font-family: $lato-bold
+				font-weight: bold
+			input
+				width: 85%
+				margin: 0 auto
+				height: 70px
+				display: flex
+				justify-content: center
+				font-size: 24px
+				padding-left: 80px
+				font-family: $lato-light
+				color: #626262
+				@include small
+					padding-left: 40px
+					height: 40px
+				@include micro
+					padding-left: 40px
+					height: 40px
+					
+			.wayout
+				background: #fff url(../img/bromo.png) left no-repeat 
+				background-size: 10%
+			.wayto
+				background: #fff url(../img/circle-batu.png) left no-repeat 
+				background-size: 8%
+				
+					
+					
+			.subdest
+				display: flex
+				justify-content: flex-end
+				align-items: center
+				margin: 10px 70px
+				color: #d8cb7d
+				@include micro
+					justify-content: center
+					margin: 10px auto
+
+			.add_sub
+				background: url(../img/plus.png) center no-repeat
+				height: 22px
+				width: 22px
+				margin-left: 5px
+				
+			.sub2
+				margin-bottom: 40px
+			hr
+				margin: 0
+			.enjoy-text
+				font-family: $lato-bold
+				color: #aea25c
+				padding-left: 70px
+				margin-bottom: 0
+				@include micro
+					padding-left: 20px
+			.drag
+				text-align: center
+				margin: 0 30px 80px
+				outline: 3px dashed #E8E897
+				display: flex
+				flex-direction: column
+				justify-content: center
+				color: #d8cb7d
+				background-color: #F5E99E
+				height: 70px
+				border-radius: 10px
+				cursor: pointer
+	.btns
+		display: flex
+		justify-content: flex-end
+		@include micro,small
+			justify-content: center
+		.btn
+			height: 66px
+			
+			color: white
+			text-transform: uppercase
+			font-family: $lato-bold
+			border-radius: 30px
+			text-align: center
+			line-height: 50px
+			margin-right: 25px
+			cursor: pointer
+			@include micro
+				margin-right: 5px
+		.btn-save
+			background: #C3F37F
+			width: 170px
+			text-indent: 20px
+			position: relative
+			transition: all .5s
+			@include micro
+				text-indent: 25px
+			
+			&:hover
+				background: #CBE1AD
+				color: #333
+			
+			
+			&:before
+				content: ""
+				position: absolute
+				background: url(../img/save.png)
+				top: 33px
+				left: 20px
+				margin-top: -9px
+				height: 18px
+				width: 20px
+				color: red
+		.btn-print
+			width: 135px
+			background: #3DDBC7
+			text-indent: 30px
+			position: relative
+			color: white
+			transition: all .5s
+			&:hover
+				background: #CBE1AD
+				color: #333
+			
+			&:before
+				content: ""
+				position: absolute
+				background: url(../img/print.png)
+				top: 33px
+				left: 25px
+				margin-top: -9px
+				height: 22px
+				width: 24px
+			
+.contacts
+	position: relative
+	height: 670px
+	
+	@include medium
+		height: 800px
+	@include small
+		height: 800px
+	@include micro
+		height: 800px
+	
+	
+	&:after
+		content: ""
+		width: 100%
+		height: 670px
+		position: absolute
+		background: rgba(70,100,100, 0.2)
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		z-index: 0
+		@include medium
+			background: rgba(70,100,100, 0.3)
+			height: 100%
+		@include small
+			background: rgba(70,100,100, 0.3)
+			height: 100%
+		@include micro
+			background: rgba(70,100,100, 0.3)
+			height: 100%
+
+
+	iframe
+		z-index: -1
+		width: 100%
+		height: 670px
+		position: absolute
+		@include medium, small, micro
+			height: 100%
+		
+
+
+	h2
+		text-align: center
+		color: white
+		font-family: $chunk-five
+		font-size: 60px
+		color: #fff
+		margin: 70px auto
+		z-index: 5
+	.contact__form
+		margin: 30px auto
+		height: 280px
+		display: flex
+		flex-direction: column
+		input[name="email"]
+			width: 100%
+			margin: 0 auto 10px
+			height: 54px
+			padding: 10px
+			z-index: 3
+			border-radius: 5px
+		.comsubj
+			display: flex
+			justify-content: space-between
+			margin: 10px 0 20px
+			height: 54px
+
+			input[name="company"]
+				width: 47%
+				padding: 10px
+				z-index: 3
+				border-radius: 5px
+			input[name="subject"]
+				width: 47%
+				padding: 10px
+				z-index: 3
+				border-radius: 5px
+		textarea
+			height: 100px
+			resize: none
+			
+			z-index: 3
+			border-radius: 5px
+		.btn-message
+			background: #C3F37F
+			width: 170px
+			margin-top: 20px
+			align-self: flex-end
+			height: 66px
+			color: white
+			text-transform: uppercase
+			font-family: $lato-bold
+			border-radius: 30px
+			text-align: center
+			line-height: 50px
+			cursor: pointer
+			z-index: 5
+			transition: all .5s
+			@include micro
+				margin: 10px auto
+			&:hover
+				background: #CBE1AD
+				color: #333
+	.or
+		color: #fff	
+		font-size: 24px
+		display: flex
+		justify-content: center
+		align-items: center
+		
+	.main-find
+		display: flex
+		justify-content: center
+		align-items: center
+		.find
+			
+			@include medium
+				display: flex
+				flex-direction: column
+				justify-content: center
+				background: rgba(#333, 0.4)
+			@include small, micro
+				display: flex
+				flex-direction: column
+				justify-content: center
+				background: rgba(#333, 0.4)
+				width: 100%
+			h3
+				color: white
+				margin-top: 20px
+				font-size: 44px
+				font-family: $lato-light
+				text-transform: capitalize
+				@include medium
+					margin: 0 auto
+				@include small, micro
+					margin: 0 auto
+					font-size: 30px
+
+			p
+				font-size: 12px
+				padding: 10px 20px 0
+				margin: 0
+				color: white
+				font-family: $lato-reg
+				@include medium
+					margin: 0 auto
+					
+					color: #fff
+					font-weight: bold
+				@include small, micro
+					margin: 0 auto
+					
+					color: #fff
+					font-weight: bold
+				&.home
+					position: relative
+					&:before
+						position: absolute
+						content: ""
+						background: url(../img/European-Home.png) no-repeat center
+						height: 20px
+						width: 20px
+						left: 0
+				&.phone
+					position: relative
+					&:before
+						position: absolute
+						content: ""
+						background: url(../img/User.png) no-repeat center
+						height: 20px
+						width: 20px
+						left: 0
+				span
+					text-transform: uppercase
+					color: yellow
+
+
+.keep
+	background: url(../img/keep-bg.jpg) no-repeat center
+	background-size: cover
+	height: 200px
+	@include medium
+		padding-bottom: 10px
+	@include small
+		padding-bottom: 110px
+	@include micro
+		padding-top: 10px
+		height: 250px
+		
+	.container
+		height: 100%
+		
+		.row
+			height: 100%
+			.keep-cont
+				display: flex
+				justify-content: space-between
+				width: 100%
+				align-items: center
+				height: 100%
+				@include medium
+					flex-direction: row !important
+				
+				@include small
+					flex-direction: column
+				@include micro
+					flex-direction: column
+					
+				h2
+					
+					color: white
+					font-family: $chunk-five
+					font-size: 60px
+					color: #fff
+					@include micro, small
+						font-size: 40px
+						color: #fff
+						text-align: center
+					
+				p
+					color: #fff
+					font-family: $lato-reg
+					@include medium
+						padding: 0 10px
+						text-align: center
+				.right-text
+					display: flex
+				input
+					height: 73px
+					width: 397px
+					position: relative
+					font-size: 30px
+					padding: 30px
+					border-radius: 5px 0 0 5px
+					@include micro
+						width: 80%
+						padding: 0
+						margin-bottom: 20px
+						margin-left: 10px
+				button
+					height: 73px
+					width: 73px
+					font-size: 40px
+					background: #01a2a6
+					color: #fff
+					outline: none
+					border: none
+					border-radius: 0 5px 5px 0
+					transition: all 0.5s
+					cursor: pointer
+					@include micro
+						margin-right: 10px
+					&:hover
+						background: #CBE1AD
+						color: #333
+					
+.footer
+	background: url(../img/foot-bg.jpg) no-repeat center
+	height: 254px
+	background-size: 100% 100%
+	.container
+		height: 100%
+		.row
+			display: flex
+			justify-content: space-between
+			flex-direction: row
+			height: 100%
+			padding-top: 10px
+			@include small
+				flex-direction: column
+				align-items: center
+			@include micro
+				flex-direction: column
+				align-items: center
+
+			.terms
+				list-style: circle
+				li
+					display: inline-block
+					float: left
+					margin-right: 10px
+					
+					
+					a
+						color: #aeaeae
+						font-family: $lato-reg
+						font-size: 12px
+
+			.soc
+				order: 1
+				@include small
+					order: 0
+				@include micro
+					order: 0
+					
+				li
+					
+					display: inline-block
+					float: left
+					margin-right: 10px
+					height: 26px
+					background: red
+					border-radius: 50%
+					width: 30px
+					height: 30px
+					text-align: center
+					background: #3D3741
+					
+					
+					a
+						color: #2F2933
+						font-family: $lato-reg
+						font-size: 18px
+						
+			.copy
+				align-self: flex-end
+				font-family: $lato-reg
+				font-size: 12px
+				color: #aeaeae
+				@include small
+					align-self: center
+				@include micro
+					align-self: center
+					
+								
+			
+
+
+
+			
+
+
+
+
